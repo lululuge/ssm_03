@@ -60,5 +60,5 @@ public interface OrdersDao {
 //            查询出游客信息
             @Result(column = "id", property = "travellers", javaType = java.util.List.class, many = @Many(select = "com.luge.dao.TravellerDao.findById"))
     })
-    Orders findById(int id);
+    Orders findById(Integer id);
 }

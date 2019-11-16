@@ -14,7 +14,7 @@ public class OrdersServiceImpl implements com.luge.service.OrdersService {
     private OrdersDao ordersDao;
 
     @Override
-    public List<Orders> findAll(int currentPage, int pageSize) {
+    public List<Orders> findAll(Integer currentPage, Integer pageSize) {
         PageHelper.startPage(currentPage, pageSize);
         return ordersDao.findAll();
     }
@@ -27,7 +27,7 @@ public class OrdersServiceImpl implements com.luge.service.OrdersService {
     }
 
     @Override
-    public Orders findById(int id) {
+    public Orders findById(Integer id) {
         return ordersDao.findById(id);
     }
 }

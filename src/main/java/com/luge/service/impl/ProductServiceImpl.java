@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> findAll(int currentPage, int pageSize) throws Exception {
+    public List<Product> findAll(Integer currentPage, Integer pageSize) throws Exception {
         PageHelper.startPage(currentPage, pageSize);
         return productDao.findAll(currentPage, pageSize);
     }

@@ -18,7 +18,7 @@ public interface ProductDao {
      * @return
      */
     @Select("select * from product")
-    public List<Product> findAll(int currentPage, int pageSize) throws Exception;
+    public List<Product> findAll(Integer currentPage, Integer pageSize) throws Exception;
 
     /**
      * 根据id查询产品

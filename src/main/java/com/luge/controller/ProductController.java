@@ -4,11 +4,14 @@ import com.github.pagehelper.PageInfo;
 import com.luge.domain.Product;
 import com.luge.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -41,8 +44,9 @@ public class ProductController {
      * @throws Exception
      */
     @RequestMapping(path = "/findAll.do")
-    public ModelAndView findAll(@RequestParam(name = "currentPage", required = true, defaultValue = "1") int currentPage,
-                                @RequestParam(name = "pageSize", required = true, defaultValue = "4") int pageSize) throws Exception{
+    @RolesAllowed("USER")
+    public ModelAndView findAll(@RequestParam(name = "currentPage", required = true, defaultValue = "1") Integer currentPage,
+                                @RequestParam(name = "pageSize", required = true, defaultValue = "4") Integer pageSize) throws Exception{
         ModelAndView mav = new ModelAndView();
         List<Product> productList = productService.findAll(currentPage, pageSize);
         PageInfo pageInfo = new PageInfo(productList);

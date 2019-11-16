@@ -12,7 +12,7 @@ public interface OrdersService {
      * 查询所有订单
      * @return
      */
-   public List<Orders> findAll(int currentPage, int pageSize);
+   public List<Orders> findAll(Integer currentPage, Integer pageSize);
 
     /**
      * 删除选中订单
@@ -25,5 +25,5 @@ public interface OrdersService {
      * 根据id查询订单详细信息
      * @param id
      */
-    Orders findById(int id);
+    Orders findById(Integer id);
 }

@@ -438,7 +438,7 @@
 			var pageSize = $("#changePageSize").val();
 
 			//向服务器发送请求，改变没页显示条数
-			location.href = "${pageContext.request.contextPath}/orders/findAll.do?currentPage=1&pageSize="
+			location.href = "${pageContext.request.contextPath}/product/findAll.do?currentPage=1&pageSize="
 					+ pageSize;
 		}
 		$(document).ready(function() {

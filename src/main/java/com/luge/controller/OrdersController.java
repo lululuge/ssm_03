@@ -37,8 +37,8 @@ public class OrdersController {
      * 分页查询所有订单信息
      */
     @RequestMapping(path = "/findAll.do")
-    public ModelAndView findAll(@RequestParam(name = "currentPage", required = true, defaultValue = "1") int currentPage,
-                                @RequestParam(name = "pageSize", required = true, defaultValue = "4") int pageSize) {
+    public ModelAndView findAll(@RequestParam(name = "currentPage", required = true, defaultValue = "1") Integer currentPage,
+                                @RequestParam(name = "pageSize", required = true, defaultValue = "4") Integer pageSize) {
         ModelAndView mav = new ModelAndView();
         List<Orders> ordersList = ordersService.findAll(currentPage, pageSize);
         PageInfo pageInfo = new PageInfo(ordersList);
@@ -66,7 +66,7 @@ public class OrdersController {
      * @return
      */
     @RequestMapping(path = "/findById.do")
-    public ModelAndView findById(@RequestParam(name = "id", required = true) int id) {
+    public ModelAndView findById(@RequestParam(name = "id", required = true) Integer id) {
         ModelAndView mav = new ModelAndView();
         Orders orders = ordersService.findById(id);
         mav.addObject("orders", orders);

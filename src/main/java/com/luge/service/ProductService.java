@@ -12,7 +12,7 @@ public interface ProductService {
      * 查询所有产品
      * @return
      */
-    public List<Product> findAll(int currentPage, int pageSize) throws Exception;
+    public List<Product> findAll(Integer currentPage, Integer pageSize) throws Exception;
 
     /**
      * 保存新产品
